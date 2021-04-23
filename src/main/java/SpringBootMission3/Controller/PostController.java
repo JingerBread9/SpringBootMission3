@@ -93,9 +93,10 @@ public class PostController {
     // age = {}
     // address = {}
     @PostMapping("/mission1-4")
-    public String mission1_4(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model) throws IOException  {
+    public String mission1_4(HttpServletRequest request, HttpServletResponse response, HashMap<String, String[]> map, Model model) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
+
         log.info("name = {}",map);
         log.info("age = {}",map);
         log.info("address = {}",map);
