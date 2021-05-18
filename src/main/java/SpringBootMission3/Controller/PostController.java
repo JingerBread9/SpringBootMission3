@@ -26,15 +26,11 @@ public class PostController {
     //처리 결과 : 400, Bad Request
     //Required request body is missing
     @PostMapping("/mission1-1")
-    public String mission1_1(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_1(@RequestBody MissionData missionData) throws IOException  {
 
-        String name = request.getParameter("name");
-        String age = request.getParameter("age");
-        String address = request.getParameter("address");
-
-        log.info("name = {}",name);
-        log.info("age = {}",age);
-        log.info("address = {}",address);
+        log.info("name = {}",missionData.getName());
+        log.info("age = {}",missionData.getAge());
+        log.info("address = {}",missionData.getAddress());
 
         return "ok";
     }
@@ -48,15 +44,11 @@ public class PostController {
 
     //처리 결과 : OK
     @PostMapping("/mission1-2")
-    public String mission1_2(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_2(MissionData missionData) throws IOException  {
 
-        String name = request.getParameter("name");
-        String age = request.getParameter("age");
-        String address = request.getParameter("address");
-
-        log.info("name = {}",name);
-        log.info("age = {}",age);
-        log.info("address = {}",address);
+        log.info("name = {}",missionData.getName());
+        log.info("age = {}",missionData.getAge());
+        log.info("address = {}",missionData.getAddress());
 
         return "ok";
     }
@@ -72,9 +64,8 @@ public class PostController {
     //처리 결과 : 400, Bad Request
     //Required request body is missing
     @PostMapping("/mission1-3")
-    public String mission1_3(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model) throws IOException  {
+    public String mission1_3(@RequestBody HashMap<String, Object> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));
@@ -89,13 +80,11 @@ public class PostController {
     //RequestBody X
 
     //처리 결과 : OK
-    // name = {}
-    // age = {}
-    // address = {}
+    // name = null
+    // age = null
+    // address = null
     @PostMapping("/mission1-4")
-    public String mission1_4(HttpServletRequest request, HttpServletResponse response, HashMap<String, String[]> map, Model model) throws IOException  {
-
-        request.setCharacterEncoding("utf-8");
+    public String mission1_4(HashMap<String,Object> map) throws IOException  {
 
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
@@ -114,7 +103,7 @@ public class PostController {
 
     //처리 결과 : 415, Unsupported Media Type
     @PostMapping("/mission1-5")
-    public String mission1_5(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_5(@RequestBody MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -130,7 +119,7 @@ public class PostController {
 
     //처리 결과 : OK
     @PostMapping("/mission1-6")
-    public String mission1_6(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_6(MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -146,9 +135,8 @@ public class PostController {
 
     //처리 결과 : 415, "Unsupported Media Type"
     @PostMapping("/mission1-7")
-    public String mission1_7(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_7(@RequestBody HashMap<String, Object> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));
@@ -161,14 +149,13 @@ public class PostController {
     //HashMap
     //RequestBody X
 
-    //처리 결과 : OK
+    //처리 결과 : ok
     //name = null
     //age = null
     //address = null
     @PostMapping("/mission1-8")
-    public String mission1_8(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_8(HashMap<String, Object> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));
@@ -181,9 +168,9 @@ public class PostController {
     //Command Object
     //RequestBody O
 
-    //처리 결과 : 415, "Unspported Media Type"
+    //처리 결과 : 415, "Unsupported Media Type"
     @PostMapping("/mission1-9")
-    public String mission1_9(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_9(@RequestBody MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -198,9 +185,9 @@ public class PostController {
     //Command Object
     //RequestBody X
 
-    //처리 결과 : OK
+    //처리 결과 : ok
     @PostMapping("/mission1-10")
-    public String mission1_10(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_10(MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -216,9 +203,8 @@ public class PostController {
 
     //처리 결과 : 415, "Unsupported Media Type"
     @PostMapping("/mission1-11")
-    public String mission1_11(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_11(@RequestBody HashMap<String, Object> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));
@@ -231,12 +217,13 @@ public class PostController {
     //HashMap
     //RequestBody X
 
-    //처리 결과 : OK
-    // {missionData=SpringBootMission3.Model.MissionData@6ddb329b, org.springframework.validation.BindingResult.missionData=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+    //처리 결과 : ok
+    //name = null
+    //age = null
+    //address = null
     @PostMapping("/mission1-12")
-    public String mission1_12(HttpServletRequest request, HttpServletResponse response, HashMap<String, String> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_12(HashMap<String, String> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));
@@ -249,9 +236,9 @@ public class PostController {
     //Command Object
     //RequestBody O
 
-    //처리 결과 : 500, Internal Server Error
+    //처리 결과 : ok
     @PostMapping("/mission1-13")
-    public String mission1_13(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_13(@RequestBody MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -265,12 +252,12 @@ public class PostController {
     //Command Object
     //RequestBody X
 
-    //처리 결과 : OK
+    //처리 결과 : ok
     // name = null
     // age = null
     // address = null
     @PostMapping("/mission1-14")
-    public String mission1_14(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_14(MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -284,11 +271,10 @@ public class PostController {
     //HashMap
     //RequestBody O
 
-    //처리 결과 : 500, "Internal Server Error"
+    //처리 결과 : ok
     @PostMapping("/mission1-15")
-    public String mission1_15(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_15(@RequestBody HashMap<String, Object> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));
@@ -301,14 +287,13 @@ public class PostController {
     //HashMap
     //RequestBody X
 
-    //처리 결과 : OK
+    //처리 결과 : ok
     //name = null
     //age = null
     //address = null
     @PostMapping("/mission1-16")
-    public String mission1_16(HttpServletRequest request, HttpServletResponse response, HashMap<String, String> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_16(HashMap<String, String> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));

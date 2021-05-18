@@ -21,15 +21,11 @@ public class GetController {
     //처리 결과 : 400, Bad Request
     //Required request body is missing
     @GetMapping("/mission2-1")
-    public String mission2_1(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException {
+    public String mission2_1(@RequestBody MissionData missionData) throws IOException {
 
-        String name = request.getParameter("name");
-        String age = request.getParameter("age");
-        String address = request.getParameter("address");
-
-        log.info("name = {}",name);
-        log.info("age = {}",age);
-        log.info("address = {}",address);
+        log.info("name = {}",missionData.getName());
+        log.info("age = {}",missionData.getAge());
+        log.info("address = {}",missionData.getAddress());
 
         return "ok";
     }
@@ -44,15 +40,11 @@ public class GetController {
     //처리 결과 : ok
 
     @GetMapping("/mission2-2")
-    public String mission2_2(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException {
+    public String mission2_2(MissionData missionData) throws IOException {
 
-        String name = request.getParameter("name");
-        String age = request.getParameter("age");
-        String address = request.getParameter("address");
-
-        log.info("name = {}",name);
-        log.info("age = {}",age);
-        log.info("address = {}",address);
+        log.info("name = {}",missionData.getName());
+        log.info("age = {}",missionData.getAge());
+        log.info("address = {}",missionData.getAddress());
 
         return "ok";
     }
@@ -68,9 +60,8 @@ public class GetController {
     //처리 결과 : 400, Bad Request
     //Required request body is missing
     @GetMapping("/mission2-3")
-    public String mission2_3(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, String[]> map, Model model) throws IOException  {
+    public String mission2_3(@RequestBody HashMap<String, Object> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));
@@ -85,13 +76,12 @@ public class GetController {
     //RequestBody X
 
     //처리 결과 : ok
-    // name = {}
-    // age = {}
-    // address = {}
+    // name = null
+    // age = null
+    // address = null
     @GetMapping("/mission2-4")
-    public String mission2_4(HttpServletRequest request, HttpServletResponse response, HashMap<String, String[]> map, Model model) throws IOException  {
+    public String mission2_4(HashMap<String, Object> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));
@@ -110,7 +100,7 @@ public class GetController {
     //처리 결과 : 400, "Bad Request"
     //Required request body is missing
     @GetMapping("/mission2-5")
-    public String mission2_5(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_5(@RequestBody MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -126,7 +116,7 @@ public class GetController {
 
     //처리 결과 : ok
     @GetMapping("/mission2-6")
-    public String mission2_6(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_6(MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -143,9 +133,8 @@ public class GetController {
     //처리 결과 : 400, "Bad request"
     //Required request body is missing.
     @GetMapping("/mission2-7")
-    public String mission2_7(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_7(@RequestBody HashMap<String, Object> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));
@@ -163,9 +152,8 @@ public class GetController {
     //age = null
     //addres = null
     @GetMapping("/mission2-8")
-    public String mission2_8(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_8(HashMap<String, Object> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));
@@ -181,7 +169,7 @@ public class GetController {
     //처리 결과 : 400, "Bad Request"
     //Required request body is missing
     @GetMapping("/mission2-9")
-    public String mission2_9(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_9(@RequestBody MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -201,7 +189,7 @@ public class GetController {
     //age = null
     //address = null
     @GetMapping("/mission2-10")
-    public String mission2_10(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_10(MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -218,9 +206,8 @@ public class GetController {
     //처리 결과 : 400, "Bad Request"
     //Required request body is missing.
     @GetMapping("/mission2-11")
-    public String mission2_11(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_11(@RequestBody HashMap<String, Object> map) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
         log.info("address = {}",map.get("address"));
@@ -238,15 +225,11 @@ public class GetController {
     //age = null
     //address = null
     @GetMapping("/mission2-12")
-    public String mission2_12(HttpServletRequest request, HttpServletResponse response, HashMap<String, String> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_12(HashMap<String, Object> map) throws IOException  {
 
-        HashMap<String, String> map1=new HashMap<String, String>(map);
-
-
-        request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map1.get("name"));
-        log.info("age = {}",map1.get("age"));
-        log.info("address = {}",map1.get("address"));
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
         return "ok";
     }
 
@@ -255,9 +238,9 @@ public class GetController {
     //Command Object
     //RequestBody O
 
-    //처리 결과 : 500, "Internal Server Error"
+    //처리 결과 : ok
     @GetMapping("/mission2-13")
-    public String mission2_13(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_13(@RequestBody MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -276,7 +259,7 @@ public class GetController {
     // age = null
     // address = null
     @GetMapping("/mission2-14")
-    public String mission2_14(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_14(MissionData missionData) throws IOException  {
 
         log.info("name = {}",missionData.getName());
         log.info("age = {}",missionData.getAge());
@@ -290,17 +273,13 @@ public class GetController {
     //HashMap
     //RequestBody O
 
-    //처리 결과 : 500, "Internal Server Error"
+    //처리 결과 : ok
     @GetMapping("/mission2-15")
-    public String mission2_15(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, String> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_15(@RequestBody HashMap<String, Object> map) throws IOException  {
 
-        HashMap<String, String> map1=new HashMap<String, String>(map);
-
-
-        request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map1.get("name"));
-        log.info("age = {}",map1.get("age"));
-        log.info("address = {}",map1.get("address"));
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
         return "ok";
     }
 
@@ -314,15 +293,11 @@ public class GetController {
     //age = null
     //addresss = null
     @GetMapping("/mission2-16")
-    public String mission2_16(HttpServletRequest request, HttpServletResponse response, HashMap<String, String> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_16(HashMap<String, Object> map) throws IOException  {
 
-        HashMap<String, String> map1=new HashMap<String, String>(map);
-
-
-        request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map1.get("name"));
-        log.info("age = {}",map1.get("age"));
-        log.info("address = {}",map1.get("address"));
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
         return "ok";
     }
 
