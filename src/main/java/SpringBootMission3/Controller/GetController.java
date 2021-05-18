@@ -41,10 +41,10 @@ public class GetController {
     //Command Object
     //RequestBody X
 
-    //처리 결과 : 400, Bad Request
-    //Required request body is missing
+    //처리 결과 : ok
+
     @GetMapping("/mission2-2")
-    public String mission2_2(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException {
+    public String mission2_2(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException {
 
         String name = request.getParameter("name");
         String age = request.getParameter("age");
@@ -71,9 +71,9 @@ public class GetController {
     public String mission2_3(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, String[]> map, Model model) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -92,9 +92,9 @@ public class GetController {
     public String mission2_4(HttpServletRequest request, HttpServletResponse response, HashMap<String, String[]> map, Model model) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -146,9 +146,9 @@ public class GetController {
     public String mission2_7(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -159,14 +159,16 @@ public class GetController {
     //RequestBody X
 
     //처리 결과 : ok
-    // {missionData=SpringBootMission3.Model.MissionData@6ddb329b, org.springframework.validation.BindingResult.missionData=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+    //name = null
+    //age = null
+    //addres = null
     @GetMapping("/mission2-8")
     public String mission2_8(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -219,9 +221,9 @@ public class GetController {
     public String mission2_11(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -232,15 +234,19 @@ public class GetController {
     //RequestBody X
 
     //처리 결과 : ok
-    // {missionData=SpringBootMission3.Model.MissionData@6ddb329b, org.springframework.validation.BindingResult.missionData=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+    //name = null
+    //age = null
+    //address = null
     @GetMapping("/mission2-12")
     public String mission2_12(HttpServletRequest request, HttpServletResponse response, HashMap<String, String> map, Model model, MissionData missionData) throws IOException  {
 
-        request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        HashMap<String, String> map1=new HashMap<String, String>(map);
 
+
+        request.setCharacterEncoding("utf-8");
+        log.info("name = {}",map1.get("name"));
+        log.info("age = {}",map1.get("age"));
+        log.info("address = {}",map1.get("address"));
         return "ok";
     }
 
@@ -286,13 +292,15 @@ public class GetController {
 
     //처리 결과 : 500, "Internal Server Error"
     @GetMapping("/mission2-15")
-    public String mission2_15(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_15(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, String> map, Model model, MissionData missionData) throws IOException  {
+
+        HashMap<String, String> map1=new HashMap<String, String>(map);
+
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
-
+        log.info("name = {}",map1.get("name"));
+        log.info("age = {}",map1.get("age"));
+        log.info("address = {}",map1.get("address"));
         return "ok";
     }
 
@@ -301,16 +309,20 @@ public class GetController {
     //HashMap
     //RequestBody X
 
-    //처리 결과 : OK
-    //{missionData=SpringBootMission3.Model.MissionData@45f2351, org.springframework.validation.BindingResult.missionData=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+    //처리 결과 : ok
+    //name = null
+    //age = null
+    //addresss = null
     @GetMapping("/mission2-16")
-    public String mission2_16(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission2_16(HttpServletRequest request, HttpServletResponse response, HashMap<String, String> map, Model model, MissionData missionData) throws IOException  {
+
+        HashMap<String, String> map1=new HashMap<String, String>(map);
+
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
-
+        log.info("name = {}",map1.get("name"));
+        log.info("age = {}",map1.get("age"));
+        log.info("address = {}",map1.get("address"));
         return "ok";
     }
 

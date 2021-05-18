@@ -75,9 +75,9 @@ public class PostController {
     public String mission1_3(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -97,9 +97,9 @@ public class PostController {
 
         request.setCharacterEncoding("utf-8");
 
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -149,9 +149,9 @@ public class PostController {
     public String mission1_7(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -162,14 +162,16 @@ public class PostController {
     //RequestBody X
 
     //처리 결과 : OK
-    // {missionData=SpringBootMission3.Model.MissionData@6ddb329b, org.springframework.validation.BindingResult.missionData=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+    //name = null
+    //age = null
+    //address = null
     @PostMapping("/mission1-8")
     public String mission1_8(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -217,9 +219,9 @@ public class PostController {
     public String mission1_11(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -235,9 +237,9 @@ public class PostController {
     public String mission1_12(HttpServletRequest request, HttpServletResponse response, HashMap<String, String> map, Model model, MissionData missionData) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -287,9 +289,9 @@ public class PostController {
     public String mission1_15(@RequestBody HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
@@ -300,14 +302,16 @@ public class PostController {
     //RequestBody X
 
     //처리 결과 : OK
-    //{missionData=SpringBootMission3.Model.MissionData@45f2351, org.springframework.validation.BindingResult.missionData=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+    //name = null
+    //age = null
+    //address = null
     @PostMapping("/mission1-16")
-    public String mission1_16(HttpServletRequest request, HttpServletResponse response, HashMap<String, Object> map, Model model, MissionData missionData) throws IOException  {
+    public String mission1_16(HttpServletRequest request, HttpServletResponse response, HashMap<String, String> map, Model model, MissionData missionData) throws IOException  {
 
         request.setCharacterEncoding("utf-8");
-        log.info("name = {}",map);
-        log.info("age = {}",map);
-        log.info("address = {}",map);
+        log.info("name = {}",map.get("name"));
+        log.info("age = {}",map.get("age"));
+        log.info("address = {}",map.get("address"));
 
         return "ok";
     }
