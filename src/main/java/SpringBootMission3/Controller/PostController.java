@@ -222,7 +222,7 @@ public class PostController {
     //age = null
     //address = null
     @PostMapping("/mission1-12")
-    public String mission1_12(HashMap<String, String> map) throws IOException  {
+    public String mission1_12(HashMap<String, Object> map) throws IOException  {
 
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
@@ -292,7 +292,7 @@ public class PostController {
     //age = null
     //address = null
     @PostMapping("/mission1-16")
-    public String mission1_16(HashMap<String, String> map) throws IOException  {
+    public String mission1_16(HashMap<String, Object> map) throws IOException  {
 
         log.info("name = {}",map.get("name"));
         log.info("age = {}",map.get("age"));
